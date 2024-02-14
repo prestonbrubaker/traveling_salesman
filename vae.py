@@ -111,10 +111,11 @@ def test_model(model, dataloader, device):
     mse_loss = nn.MSELoss(reduction='mean')
     total_mse = 0.0
     with torch.no_grad():  # No need to track gradients
-        for data in dataloader:
-            img = data.to(device)
-            recon, _, _ = model(img)
-            loss = mse_loss(recon, img)
+        for unsolved_img, solved_img in dataloader:
+            unsolved_img = unsolved_img.to(device)
+            solved_img = solved_img.to(device)
+            recon, _, _ = model(unsolved_img)
+            loss = mse_loss(recon, solved_img)  # Calculate loss against the solved image
             total_mse += loss.item()
 
     avg_mse = total_mse / len(dataloader)
@@ -145,8 +146,11 @@ dataloader = DataLoader(dataset, batch_size=500, shuffle=True)
 
 
 # Dataset and Dataloader for test data
-test_dataset = CustomDataset(folder_path='test_photos', transform=transform)
-test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=False) 
+test_dataset = CustomDataset(unsolved_folder_path='test_photos_unsolved',
+                             solved_folder_path='test_photos',
+                             transform=transform)
+
+test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=False)  
 
 
 # Instantiate VAE model with latent_dim
