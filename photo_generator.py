@@ -59,11 +59,11 @@ for iteration in range(num_photos):
     scaled_points = [(int(x*255), int(y*255)) for x, y in best_path]
 
     # Save the solved image
-    solved_filename = f"photos/photo_{iteration:03d}.png"
+    solved_filename = f"photos/photo_{iteration}.png"
     create_image(scaled_points, include_path=True, include_text=True, filename=solved_filename)
 
     # Save the unsolved image
-    unsolved_filename = f"photos_unsolved/photo_{iteration:03d}_unsolved.png"
+    unsolved_filename = f"photos_unsolved/photo_{iteration}_unsolved.png"
     create_image(scaled_points, include_path=False, include_text=False, filename=unsolved_filename)
 
     print(f"Photo {iteration} Generated")
