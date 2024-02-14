@@ -113,8 +113,8 @@ if __name__ == "__main__":
     vae_model = load_model(model_path, latent_dim, device)
 
     # Generate images using random latents
-    num_generated_images = 3000
-    output_folder = 'generated_random_photos'
+    num_generated_images = 500
+    output_folder = 'generated_photos'
     variability_scale = 1.0  # Adjust this value to increase or decrease variability of the generated images
 
     generate_images_with_random_latents(vae_model, num_generated_images, output_folder, latent_dim, variability_scale)
