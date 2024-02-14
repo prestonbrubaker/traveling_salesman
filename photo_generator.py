@@ -65,3 +65,5 @@ for iteration in range(num_photos):
     # Save the unsolved image
     unsolved_filename = f"photos_unsolved/photo_{iteration:03d}_unsolved.png"
     create_image(scaled_points, include_path=False, include_text=False, filename=unsolved_filename)
+
+    print(f"Photo {iteration} Generated")
