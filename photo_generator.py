@@ -1,5 +1,7 @@
 import math
 import numpy as np
+import pillow
+import itertools
 
 # Step 1: Generate 10 random points
 np.random.seed(0)  # For reproducibility
