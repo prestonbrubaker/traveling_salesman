@@ -5,7 +5,7 @@ import random
 import os
 
 
-num_photos = 10
+num_photos = 10000
 
 
 # Ensure directories exist
