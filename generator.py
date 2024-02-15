@@ -7,6 +7,7 @@ import os
 
 # Model Parameters
 latent_dim = 256  # Example latent space dimension
+variability_scale = 5.0  # Adjust this value to increase or decrease variability of the generated images
 
 
 
@@ -115,7 +116,7 @@ if __name__ == "__main__":
     # Generate images using random latents
     num_generated_images = 500
     output_folder = 'generated_photos'
-    variability_scale = 1.0  # Adjust this value to increase or decrease variability of the generated images
+    
 
     generate_images_with_random_latents(vae_model, num_generated_images, output_folder, latent_dim, variability_scale)
 
