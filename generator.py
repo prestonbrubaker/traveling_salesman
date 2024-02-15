@@ -7,7 +7,7 @@ import os
 
 # Model Parameters
 latent_dim = 256  # Example latent space dimension
-variability_scale = 5.0  # Adjust this value to increase or decrease variability of the generated images
+variability_scale = 0.01  # Adjust this value to increase or decrease variability of the generated images
 
 
 
